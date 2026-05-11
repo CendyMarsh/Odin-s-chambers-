@@ -3,110 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cendy Marsh 🎀</title>
+    <title>Cendy Marsh</title>
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
-        body {
-            background: radial-gradient(circle, #2b001d 0%, #0a0a0a 100%);
-            color: #ffb1de;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 50px 20px;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        /* Аватарка */
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 3px solid #ff0080;
-            box-shadow: 0 0 20px #ff0080;
-            margin-bottom: 20px;
-            object-fit: cover;
-        }
-        h2 { text-shadow: 0 0 15px #ff0080; font-size: 28px; margin-bottom: 30px; text-align: center; }
-        .link-card {
-            background: rgba(255, 255, 255, 0.05);
-            width: 100%;
-            max-width: 350px;
-            margin: 12px;
-            padding: 18px;
-            border-radius: 20px;
-            text-decoration: none;
-            color: white;
-            display: flex;
-            align-items: center;
-            transition: all 0.4s ease;
-            border: 1px solid #ff0080;
-            box-shadow: 0 0 10px rgba(255, 0, 128, 0.2);
-            position: relative;
-            z-index: 2;
-        }
-        .link-card:hover {
-            background: #ff0080;
-            transform: translateY(-5px);
-            box-shadow: 0 0 30px #ff0080;
-        }
+        body { background: radial-gradient(circle, #4a002e 0%, #1a0011 100%); color: #ffb1de; font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; align-items: center; padding: 50px 20px; min-height: 100vh; overflow-x: hidden; margin: 0; }
+        .profile-img { width: 130px; height: 130px; border-radius: 50%; border: 4px solid #ff0080; box-shadow: 0 0 30px #ff0080; margin-bottom: 20px; object-fit: cover; z-index: 2; }
+        h2 { text-shadow: 0 0 20px #ff0080; font-size: 32px; margin-bottom: 30px; text-align: center; z-index: 2; }
+        .link-card { background: rgba(255, 255, 255, 0.1); width: 100%; max-width: 350px; margin: 12px; padding: 18px; border-radius: 25px; text-decoration: none; color: white; display: flex; align-items: center; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid #ff0080; box-shadow: 0 0 15px rgba(255, 0, 128, 0.3); position: relative; z-index: 2; backdrop-filter: blur(5px); }
+        .link-card:hover { background: #ff0080; transform: scale(1.05); box-shadow: 0 0 40px #ff0080; }
         .link-card i { font-size: 28px; margin-right: 20px; width: 40px; text-align: center; }
-        .link-text { font-size: 18px; font-weight: 600; }
-        
-        /* Сердечки */
-        .heart {
-            position: fixed;
-            top: -10px;
-            color: #ff0080;
-            font-size: 20px;
-            user-select: none;
-            z-index: 1;
-            animation: fall linear forwards;
-        }
-        @keyframes fall {
-            to { transform: translateY(105vh) rotate(360deg); }
-        }
+        .link-text { font-size: 18px; font-weight: 600; letter-spacing: 0.5px; }
+        .heart { position: fixed; top: -20px; color: #ff0080; user-select: none; z-index: 1; animation: fall linear forwards; }
+        @keyframes fall { to { transform: translateY(110vh) rotate(720deg); } }
     </style>
 </head>
 <body>
 
-    <!-- Ссылка на твою фотку (замени на свою, если есть прямая ссылка) -->
-    <img src="https://placeholder.com" class="profile-img" alt="Это я">
+    <img src="me.jpg" class="profile-img">
 
-    <h2>Твоя любимая злюка ✨</h2>
+    <h2>ТВОЁ_НАЗВАНИЕ</h2>
 
-    <a href="ТВОЙ_PH" class="link-card">
+    <a href="ССЫЛКА" class="link-card">
         <i class="fab fa-youtube" style="color: #ff9900;"></i>
-        <span class="link-text">VR Осмотр (5 минут) 🔞</span>
+        <span class="link-text">VR Promo (Secret) 🔞</span>
     </a>
 
-    <a href="ТВОЙ_VK" class="link-card">
-        <i class="fab fa-vk"></i>
-        <span class="link-text">Посмотри, жената ли я?</span>
+    <a href="ССЫЛКА" class="link-card">
+        <i class="fab fa-vk" style="color: #0077ff;"></i>
+        <span class="link-text">Личная страница</span>
     </a>
 
-    <a href="ТВОЙ_TIKTOK" class="link-card">
-        <i class="fab fa-tiktok"></i>
-        <span class="link-text">Танцы моей дочки 🎀</span>
-    </a>
-
-    <a href="ТВОЙ_ОНЛИК" class="link-card">
-        <i class="fas fa-heart"></i>
-        <span class="link-text">Секретный чат (только 18+)</span>
+    <a href="ССЫЛКА" class="link-card">
+        <i class="fas fa-heart" style="color: #ff0080;"></i>
+        <span class="link-text">Закрытый контент ✨</span>
     </a>
 
     <script>
         function createHeart() {
             const heart = document.createElement('div');
             heart.classList.add('heart');
-            heart.innerHTML = '❤️';
+            heart.innerHTML = Math.random() > 0.5 ? '❤️' : '💖';
             heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            heart.style.fontSize = Math.random() * 15 + 15 + 'px';
+            heart.style.animationDuration = Math.random() * 2 + 2 + 's';
             heart.style.opacity = Math.random();
             document.body.appendChild(heart);
-            setTimeout(() => { heart.remove(); }, 5000);
+            setTimeout(() => { heart.remove(); }, 4000);
         }
-        setInterval(createHeart, 300);
+        setInterval(createHeart, 150);
     </script>
 
 </body>
